@@ -1,0 +1,18 @@
+    `timescale 1ns / 1ps
+
+module switch_to_led (
+    input  [3:0] sw,     // 4 switches
+    output reg [3:0] led // 4 LEDs
+);
+
+// Initialize LEDs
+initial begin
+    led = 4'b0000;
+end
+
+// Combinational logic
+always @(*) begin
+    led = sw;
+end
+
+endmodule
